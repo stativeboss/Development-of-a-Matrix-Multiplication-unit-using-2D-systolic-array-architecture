@@ -1,10 +1,30 @@
 # Development-of-a-Matrix-Multiplication-unit-using-2D-systolic-array-architecture
 
 ## Top-level block diagram
+![image](https://user-images.githubusercontent.com/14873110/178118222-5b429bb1-6f7f-46fb-9bdc-fb3991479c57.png)
 
-![image](https://user-images.githubusercontent.com/14873110/178117149-1de9eaed-227d-4ee3-b6c8-66ee2983c950.png)
+## Sub-block level description
 
-## Control Logic
+### Notation overview
+
+![image](https://user-images.githubusercontent.com/14873110/178118006-c4f37cdf-771a-429a-82b2-d142c513bafe.png)
+
+
+### Memory A and Memory B
+
+
+
+
+
+- Each memory location is 128-bit wide.
+- Each memory location is divided into 4 segments A, B, C, and D.
+- Each segment will act as a port giving inputs to the systolic array simultaneously.
+- 
+ 
+
+
+
+### Control Logic
 1. No matter the matrix size, the multiplication is always 4x16 : 16x4 (buffed up other bytes with 0).
 2. Number of cycles taken for this operation is pre-calculated and after these many cycles, a complete flag is raised and this is when the data from mem_C is ready to be read.
 3. After receiving data_incoming signal from source, write enable is made high for memories A and B for 17 cycles. The first cycle is used to reset these memories.
