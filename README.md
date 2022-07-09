@@ -1,5 +1,7 @@
 # Development-of-a-Matrix-Multiplication-unit-using-2D-systolic-array-architecture
 
+The verilog design file can be found [here](https://github.com/stativeboss/Development-of-a-Matrix-Multiplication-unit-using-2D-systolic-array-architecture/blob/main/pe.v).
+
 ## Top-level block diagram
 ![image](https://user-images.githubusercontent.com/14873110/178118222-5b429bb1-6f7f-46fb-9bdc-fb3991479c57.png)
 
