@@ -19,7 +19,17 @@ The verilog design file can be found [here](https://github.com/stativeboss/Devel
 - Each memory is 64 locations deep.
 - Each memory location is 16 byte wide and is written (or read) byte by byte.
 - There are four address pointers A, B, C and D that can read (or write) 4 bytes of data simultaneously (1 byte per pointer per cycle). This is how data is fed as input into the systolic array unit.
-- Each pointer would stay at a particular address for 16 cycles. This limits the maximum number of rows (and coloumns based on AxB) an input matrix can have to 16.
+- Each pointer would stay at a particular address for 17 cycles. This limits the maximum number of rows (and coloumns based on AxB) an input matrix can have to 16.
+- The first cycle is used to write 128-bit 0 in all the address locations and each byte would then be overwritten in the subsequent cycles based on address given.
+
+### Memory C
+
+![image](https://user-images.githubusercontent.com/14873110/178119112-2f11acc2-307c-4f66-9288-b2da4443d248.png)
+
+- This memory has 256 address locations.
+- Each location is 4 byte wide.
+- The outputs of four PEs from one row are concatenated and stored in one address location of this register. This way, only 4 address locations are utilised.
+- The data in each address gets overwritten each cycle and the final result is obtained after 17cycles of multiplication start.
  
 
 
