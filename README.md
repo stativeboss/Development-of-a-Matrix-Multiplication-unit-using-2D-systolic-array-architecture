@@ -14,3 +14,8 @@
 7. read_enable signal for A and B also raises write enable for C. This goes low only as mentioned in step-2.
 8. read_enable is high for mem_C for atleast 4 cycles after this.
 9. All this while (since the time read enable is raised high for A and B and till step-8 is done), a busy flag is raised and given as input to the source saying that it can't write data.
+
+## Future work
+1. Conversion of control logic into verilog code.
+2. Checking the design with a proper test-bench.
+3. Improvising the speed of the design by taking the input matrices's size into consideration.
