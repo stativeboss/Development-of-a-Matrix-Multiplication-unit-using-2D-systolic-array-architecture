@@ -14,14 +14,12 @@ The verilog design file can be found [here](https://github.com/stativeboss/Devel
 
 ### Memory A and Memory B
 
+![image](https://user-images.githubusercontent.com/14873110/178118596-6c2fcb2d-68df-47f7-b393-ebab13fad5e9.png)
 
-
-
-
-- Each memory location is 128-bit wide.
-- Each memory location is divided into 4 segments A, B, C, and D.
-- Each segment will act as a port giving inputs to the systolic array simultaneously.
-- 
+- Each memory is 64 locations deep.
+- Each memory location is 16 byte wide and is written (or read) byte by byte.
+- There are four address pointers A, B, C and D that can read (or write) 4 bytes of data simultaneously (1 byte per pointer per cycle). This is how data is fed as input into the systolic array unit.
+- Each pointer would stay at a particular address for 16 cycles. This limits the maximum number of rows (and coloumns based on AxB) an input matrix can have to 16.
  
 
 
